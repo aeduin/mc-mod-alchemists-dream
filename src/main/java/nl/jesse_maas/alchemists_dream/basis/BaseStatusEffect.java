@@ -1,4 +1,4 @@
-package net.fabricmc.example.basis;
+package nl.jesse_maas.alchemists_dream.basis;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;

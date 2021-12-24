@@ -1,7 +1,7 @@
-package net.fabricmc.example;
+package nl.jesse_maas.alchemists_dream;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.example.basis.BaseStatusEffect;
+import nl.jesse_maas.alchemists_dream.basis.BaseStatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.potion.Potion;
@@ -16,8 +16,13 @@ public class AlchemistsDream implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LogManager.getLogger("alchemists_dream");
 
+	public static final int TICKS_PER_MINUTE = 20 * 60;
+
 	public static final BaseStatusEffect TRUE_INVISIBILITY = new BaseStatusEffect(StatusEffectCategory.BENEFICIAL, 0x444455);
-	public static final Potion TRUE_INVISIBILITY_POTION = new Potion(new StatusEffectInstance(TRUE_INVISIBILITY, 10 * 60 * 20, 1, false, false));
+	public static final Potion TRUE_INVISIBILITY_POTION = new Potion(new StatusEffectInstance(TRUE_INVISIBILITY, 10 * TICKS_PER_MINUTE, 1, false, false));
+
+	public static final BaseStatusEffect NO_REGEN = new BaseStatusEffect(StatusEffectCategory.BENEFICIAL, 0x4A7755);
+	public static final Potion NO_REGEN_POTION = new Potion(new StatusEffectInstance(NO_REGEN, 5 * TICKS_PER_MINUTE));
 
 	@Override
 	public void onInitialize() {
@@ -30,5 +35,9 @@ public class AlchemistsDream implements ModInitializer {
 		var true_invisibility_id = new Identifier("alchemists_dream", "true_invisibility");
 		Registry.register(Registry.STATUS_EFFECT, true_invisibility_id, TRUE_INVISIBILITY);
 		Registry.register(Registry.POTION, true_invisibility_id, TRUE_INVISIBILITY_POTION);
+
+		var no_regen_id = new Identifier("alchemists_dream", "no_regen");
+		Registry.register(Registry.STATUS_EFFECT, no_regen_id, NO_REGEN);
+		Registry.register(Registry.POTION, no_regen_id, NO_REGEN_POTION);
 	}
 }

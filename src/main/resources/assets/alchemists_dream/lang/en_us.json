@@ -1,3 +1,6 @@
 {
-  "item.minecraft.potion.effect.true_invisibility": "True Invisibility"
+  "item.minecraft.potion.effect.true_invisibility": "Potion of True Invisibility",
+  "effect.alchemists_dream.true_invisibility": "True Invisibility",
+  "item.minecraft.potion.effect.no_regen": "Potion of No Regeneration",
+  "effect.alchemists_dream.no_regen": "No Regeneration"
 }

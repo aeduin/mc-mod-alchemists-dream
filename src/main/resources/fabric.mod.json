@@ -9,7 +9,7 @@
     "Jesse C. Maas"
   ],
   "contact": {
-    "homepage": "www.jesse-maas.nl",
+    "homepage": "www.jesse_maas.nl",
     "sources": ""
   },
 
@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.AlchemistsDream"
+      "nl.jesse_maas.alchemists_dream.AlchemistsDream"
     ]
   },
   "mixins": [
