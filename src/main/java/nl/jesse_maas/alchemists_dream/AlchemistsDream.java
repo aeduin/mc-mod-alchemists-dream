@@ -19,10 +19,13 @@ public class AlchemistsDream implements ModInitializer {
 	public static final int TICKS_PER_MINUTE = 20 * 60;
 
 	public static final BaseStatusEffect TRUE_INVISIBILITY = new BaseStatusEffect(StatusEffectCategory.BENEFICIAL, 0x444455);
-	public static final Potion TRUE_INVISIBILITY_POTION = new Potion(new StatusEffectInstance(TRUE_INVISIBILITY, 10 * TICKS_PER_MINUTE, 1, false, false));
+	public static final Potion TRUE_INVISIBILITY_POTION = new Potion(new StatusEffectInstance(TRUE_INVISIBILITY, 10 * TICKS_PER_MINUTE, 0, false, false));
 
-	public static final BaseStatusEffect NO_REGEN = new BaseStatusEffect(StatusEffectCategory.BENEFICIAL, 0x4A7755);
+	public static final BaseStatusEffect NO_REGEN = new BaseStatusEffect(StatusEffectCategory.HARMFUL, 0x551144);
 	public static final Potion NO_REGEN_POTION = new Potion(new StatusEffectInstance(NO_REGEN, 5 * TICKS_PER_MINUTE));
+
+	public static final BaseStatusEffect DOUBLE_JUMP = new BaseStatusEffect(StatusEffectCategory.BENEFICIAL, 0x33DD55);
+	public static final Potion DOUBLE_JUMP_POTION = new Potion(new StatusEffectInstance(DOUBLE_JUMP, 5 * TICKS_PER_MINUTE));
 
 	@Override
 	public void onInitialize() {
@@ -39,5 +42,9 @@ public class AlchemistsDream implements ModInitializer {
 		var no_regen_id = new Identifier("alchemists_dream", "no_regen");
 		Registry.register(Registry.STATUS_EFFECT, no_regen_id, NO_REGEN);
 		Registry.register(Registry.POTION, no_regen_id, NO_REGEN_POTION);
+
+		var double_jump_id = new Identifier("alchemists_dream", "double_jump");
+		Registry.register(Registry.STATUS_EFFECT, double_jump_id, DOUBLE_JUMP);
+		Registry.register(Registry.POTION, double_jump_id, DOUBLE_JUMP_POTION);
 	}
 }
